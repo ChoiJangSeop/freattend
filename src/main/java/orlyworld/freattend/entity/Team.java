@@ -25,4 +25,13 @@ public class Team {
     @OneToMany(mappedBy = "team")
     private List<Admin> admins = new ArrayList<>();
 
+    //== 생성 메서드 ==//
+    public static Team createTeam(String name, String tel) {
+        Team team = new Team();
+        team.name = name;
+        team.tel = tel;
+
+        return team;
+    }
+
 }

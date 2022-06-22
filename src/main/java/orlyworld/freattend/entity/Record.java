@@ -52,6 +52,10 @@ public class Record {
      * Member의 요청(record)를 처리
      */
     public void answerRecord(Admin admin, ApproveStatus status, String comment) {
+
+        if (status == ApproveStatus.REJECTED || status == ApproveStatus.CANCEL) {
+            item.cancelItem();
+        }
         this.approve.answerApprove(admin, status, comment);
     }
 
