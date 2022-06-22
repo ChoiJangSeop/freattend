@@ -10,7 +10,6 @@ import javax.persistence.*;
 public class Approve {
 
     @Id
-    @GeneratedValue
     @Column(name = "APPROVE_ID")
     private Long id;
 
@@ -19,7 +18,11 @@ public class Approve {
 
     private String comment;
 
-    @OneToOne(mappedBy = "approve")
+    // 식별관계
+    // TODO 식별관계 테스트 코드 작성
+    @MapsId
+    @OneToOne
+    @JoinColumn(name = "REOCRD_ID")
     private Record record;
 
     @ManyToOne

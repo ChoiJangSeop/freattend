@@ -26,8 +26,7 @@ public class Record {
     @JoinColumn(name = "ITEM_ID")
     private Item item;
 
-    @OneToOne
-    @JoinColumn(name = "APPROVE_ID")
+    @OneToOne(mappedBy = "record")
     private Approve approve;
 
     //== 생성 메서드 ==//
